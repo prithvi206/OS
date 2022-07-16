@@ -1,0 +1,30 @@
+The man page of chmod says that`.
+
+u stands for user.
+g stands for group.
+o stands for others.
+a stands for all.
+That means that chmod u+x filename will grant the execution permission to the owner of the file and no one else, whereas chmod +x filename is the same as chmod a+x filename (which means give everyone the rights to run the file).
+
+Instead of using ugoa shorthand for permissions, chmod allows you to use numbers, which is called octal mode number notation.
+
+File permissions in Linux are stored in file mode bits, and those bits varies between user groups.
+
+r (read) = 4
+w (write) = 2
+x (execute) = 1
+
+To set permission to a group using numbers, you need to add the digits according to what was mentioned above. For example:
+
+To represent rwx triplet use 4+2+1=7
+To represent rw- triplet use 4+2+0=6
+To represent r– triplet use 4+0+0=4
+To represent r-x triplet use 4+0+1=5
+
+chmod +x is equal to chmod a+x, which means “add executable permission to somefile for all user groups”
+chmod 777 is equal to chmod a=rwx, which means “set read, write, executable permission to somefile for all user groups”
+
+
+owner  group  public
+4+2+1  4+2+1   4+2+1     : chmod 777
+4+2+1  4+1      4+1      : chmod 755
