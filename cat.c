@@ -4,6 +4,7 @@
 #include<stdlib.h>
 int main(int argc ,char *argv)
 {
+    //where argc is the argument count and argv is an array of character pointers to the arguments themselves
     FILE *fp1;
     char ch;
     if(argc<2 )
