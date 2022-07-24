@@ -29,6 +29,7 @@ int main()
         printf("[CHILD] Child process going to load another program using execlp syscall\n");
         execlp("/bin/pwd","pwd",NULL);
         // execlp(const char *file,const char *arg0,..,NULL)
+        //pwd : print working directory, gives full path of the current working directory
         //<unistd.h> header file
         //The execlp() function replaces the current process image with a new process image specified by file
         //Pointers to NULL-terminated character strings
